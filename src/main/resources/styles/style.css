@@ -1,0 +1,11 @@
+.html-editor .top-toolbar {
+-fx-background-color:"A8C6FA";
+}
+
+.html-editor .tool-bar{
+-fx-background-color:"A8C6FA";
+}
+
+.html-editor .tool-bar *.choice-box {
+    -fx-text-fill: red;
+}

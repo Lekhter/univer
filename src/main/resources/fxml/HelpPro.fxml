@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:controller="akhtyrska.HelpProController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: D4E3FC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <top>
+      <MenuBar style="-fx-background-color: A8C6FA; -fx-border-color: C8C8C8;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="New"  onAction="#newFile"/>
+                  <MenuItem mnemonicParsing="false" text="Open" onAction="#openFile"/>
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save As" onAction="#saveAsFile" />
+                  <MenuItem mnemonicParsing="false" text="Generate PDF" onAction="#generatePDF" />
+                  <MenuItem mnemonicParsing="false" text="Manage Users" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox style="-fx-background-color: A8C6FA;">
+         <children>
+            <Label prefHeight="60.0" prefWidth="200.0" text="Table of Contents">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <ToolBar prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: A8C6FA;">
+              <items>
+                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="Move Up">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="./images/arrow_up.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="Move Down">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="./images/arrow_down.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="Increase Level">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="./images/arrow_left.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="Decrease Level">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="./images/arrow_right.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="Add Topic">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="./images/add_topic.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="Delete Topic">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="./images/delete_topic.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+              </items>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </ToolBar>
+            <TreeView  fx:id="treeView"  prefHeight="382.0" prefWidth="200.0" />
+            <Pane prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: A8C6FA; -fx-border-color: c8c8c8;">
+               <children>
+                  <CheckBox layoutX="14.0" layoutY="6.0" mnemonicParsing="false" text="Include topic into build" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox>
+         <children>
+            <TextField promptText="Enter the topic name" BorderPane.alignment="TOP_CENTER" />
+            <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="552.0" prefWidth="600.0" stylesheets="./styles/style.css" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
